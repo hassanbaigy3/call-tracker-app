@@ -4,6 +4,11 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import './assets/fonts/AvenirLTStd-Book.otf';
+import './assets/fonts/AvenirLTStd-Black.otf';
+import './assets/fonts/AvenirLTStd-Roman.otf';
+
 import './index.css';
 
 const container = document.getElementById('root')!;

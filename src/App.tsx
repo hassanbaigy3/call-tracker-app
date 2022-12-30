@@ -1,10 +1,8 @@
-import './App.css';
+import "./App.css";
+import Login from "./pages/login.page";
 
 function App() {
-  return (
-    <div className="">
-    </div>
-  );
+  return <Login />;
 }
 
 export default App;
