@@ -61,7 +61,7 @@ const Login = () => {
               required
               placeholder='password'
             />
-            <button className='text-2xl mt-6 w-1/3 h-16 flex no-wrap justify-center items-center shrink-0 text-primary bg-secondary'>
+            <button className='text-2xl mt-6 w-1/3 h-12 flex no-wrap justify-center items-center shrink-0 text-primary bg-secondary rounded-md'>
               Login
             </button>
           </form>

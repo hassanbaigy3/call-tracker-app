@@ -1,5 +1,7 @@
+import Header from "../components/header.component";
+
 const Home = () => {
-  return <div>kasjdbkbjs</div>;
+  return <Header />;
 };
 
 export default Home;

@@ -7,7 +7,7 @@ type ProtectedRouteProps = {
 
 const ProtectedRoute = ({ componentToPassDown }: ProtectedRouteProps) => {
   const accessToken = localStorage.getItem(CONSTANTS.AUTH_TOKEN);
-  if (accessToken === null) {
+  if (accessToken === "" || accessToken === null) {
     return <Navigate to='/login' state={{ from: CONSTANTS.history.location }} />;
   }
   return componentToPassDown;
