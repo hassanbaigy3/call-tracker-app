@@ -3,4 +3,6 @@ export const CONSTANTS = {
     navigate: null,
     location: null,
   },
+
+  AUTH_TOKEN: "auth-token",
 };

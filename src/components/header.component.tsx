@@ -1,13 +1,13 @@
 import TuringLogo from "../assets/images/logo.png";
-import Divider from "@material-ui/core/Divider";
 
 const Header = () => {
   return (
     <>
-      <div className='flex justify-between m-4'>
-        <img src={TuringLogo} alt='logo' className='w-1/6 h-auto' />
+      <div className='sticky top-0 z-30 w-full px-2 py-4 bg-white sm:px-4 shadow-xl'>
+        <div className='flex items-center justify-between mx-auto max-w-7xl'>
+          <img src={TuringLogo} alt='logo' className='w-1/6 h-auto' />
+        </div>
       </div>
-      <Divider />
     </>
   );
 };
