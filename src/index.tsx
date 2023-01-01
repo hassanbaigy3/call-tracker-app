@@ -1,8 +1,13 @@
 import React from "react";
+import App from "./App";
+
+import { BrowserRouter } from "react-router-dom";
+import { ApolloProvider } from "@apollo/client";
 import { createRoot } from "react-dom/client";
+import { client } from "./config/apollo";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import App from "./App";
+
 import reportWebVitals from "./reportWebVitals";
 
 import "./assets/fonts/AvenirLTStd-Book.otf";
@@ -10,7 +15,6 @@ import "./assets/fonts/AvenirLTStd-Black.otf";
 import "./assets/fonts/AvenirLTStd-Roman.otf";
 
 import "./index.css";
-import { BrowserRouter } from "react-router-dom";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -18,9 +22,11 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ApolloProvider>
     </Provider>
   </React.StrictMode>
 );

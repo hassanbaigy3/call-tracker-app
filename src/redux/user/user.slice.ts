@@ -1,18 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { UserType } from "../../utils/types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const INITIAL_STATE = {
-  currentUser: null,
-  isLoggingIn: false,
+type UserState = {
+  accessToken: String | null;
+  refreshToken: String | null;
+  user: UserType | null;
 };
 
 const userSlice = createSlice({
   name: "user",
-  initialState: INITIAL_STATE,
+  initialState: { accessToken: null, refreshToken: null, user: null } as UserState,
   reducers: {
-    setCurrentUser: (state, action) => {
-      if (action.payload) {
-        return (state.currentUser = action.payload);
-      }
+    setCurrentUser: (
+      state,
+      {
+        payload: { accessToken, refreshToken, user },
+      }: PayloadAction<{ accessToken: String | null; refreshToken: String | null; user: UserType | null }>
+    ) => {
+      state.accessToken = accessToken;
+      state.refreshToken = refreshToken;
+      state.user = user;
     },
   },
 });

@@ -1,11 +1,13 @@
 import { ChangeEvent, FormEventHandler, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useMutation } from "react-apollo";
+import { useMutation } from "@apollo/client";
 
 import Header from "../components/header.component";
 import FormInput from "../components/form-input.component";
 
 import { LOGIN_MUTATION } from "../utils/GQL";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "../redux/user/user.slice";
 import { CONSTANTS } from "../utils/CONSTANTS";
 
 const defaultFormFields = {
@@ -15,16 +17,20 @@ const defaultFormFields = {
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { username, password } = formFields;
+
   const [login] = useMutation(LOGIN_MUTATION, {
     variables: {
       username,
       password,
     },
     onCompleted: ({ login }) => {
-      localStorage.setItem(CONSTANTS.AUTH_TOKEN, login.access_token);
+      const { access_token, refresh_token, user } = login;
+      dispatch(setCurrentUser({ accessToken: access_token, refreshToken: refresh_token, user: user }));
+      localStorage.setItem(CONSTANTS.AUTH_TOKEN, access_token);
       navigate("/");
     },
   });

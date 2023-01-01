@@ -5,4 +5,6 @@ export const CONSTANTS = {
   },
 
   AUTH_TOKEN: "auth-token",
+
+  limit: 9.0,
 };
