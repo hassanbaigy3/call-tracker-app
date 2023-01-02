@@ -11,10 +11,11 @@ module.exports = {
     colors: {
       primary: "#FFFFFF",
       secondary: "#4F46F8",
-      offWhite: "FAF9F6",
+      cream: "FAF9F6",
       gray: "#E5E4E2",
       teal: "#1DC997",
       red: "#C91D3E",
+      black: "#000000",
     },
   },
   plugins: [],

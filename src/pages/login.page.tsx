@@ -5,10 +5,10 @@ import { useMutation } from "@apollo/client";
 import Header from "../components/header.component";
 import FormInput from "../components/form-input.component";
 
-import { LOGIN_MUTATION } from "../utils/GQL";
 import { useDispatch } from "react-redux";
-import { setCurrentUser } from "../redux/user/user.slice";
+import { LOGIN_MUTATION } from "../utils/GQL";
 import { CONSTANTS } from "../utils/CONSTANTS";
+import { setCurrentUser } from "../redux/user/user.slice";
 
 const defaultFormFields = {
   username: "",
@@ -22,7 +22,7 @@ const Login = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { username, password } = formFields;
 
-  const [login] = useMutation(LOGIN_MUTATION, {
+  const [login, { loading }] = useMutation(LOGIN_MUTATION, {
     variables: {
       username,
       password,
@@ -60,7 +60,7 @@ const Login = () => {
               placeholder='username'
             />
             <FormInput
-              type='text'
+              type='password'
               name='password'
               onChange={handleChange}
               value={password}
@@ -68,7 +68,7 @@ const Login = () => {
               placeholder='password'
             />
             <button className='text-2xl mt-6 w-1/3 h-12 flex no-wrap justify-center items-center shrink-0 text-primary bg-secondary rounded-md'>
-              Login
+              {loading ? `...` : `Login`}
             </button>
           </form>
         </div>
