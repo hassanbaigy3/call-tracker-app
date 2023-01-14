@@ -23,7 +23,7 @@ const Home = () => {
   const totalCount = data?.paginatedCalls.totalCount;
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
 
       {loading ? (
@@ -95,7 +95,7 @@ const Home = () => {
         </div>
       )}
       <Footer/>
-    </>
+      </div>
   );
 };
 
