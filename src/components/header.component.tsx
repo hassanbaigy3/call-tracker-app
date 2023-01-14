@@ -3,7 +3,6 @@ import type { RootState } from "../redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser } from "../redux/user/user.slice";
 
-import TuringLogo from "../assets/images/logo.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -20,7 +19,7 @@ const Header = () => {
     <>
       <div className='sticky top-0 z-30 w-full px-2 py-4 bg-white sm:px-4 shadow-xl h-full'>
         <div className='flex items-center justify-between mx-auto max-w-7xl'>
-          <img src={TuringLogo} alt='logo' className='w-1/6 h-auto' />
+          <h1 className="font-bold text-secondary shadow text-xl">CALL HISTORY</h1>
           {isLoggedIn !== null ? (
             <button
               className='flex justify-center items-center font-roman text-primary bg-secondary rounded-md text-md w-1/6 h-8'

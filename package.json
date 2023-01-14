@@ -1,5 +1,5 @@
 {
-  "name": "turing-call-app",
+  "name": "call-tracker-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,12 +19,10 @@
     "apollo-link-error": "^1.1.13",
     "apollo-link-http": "^1.5.3",
     "apollo-link-retry": "^2.2.2",
-    "bootstrap": "^5.2.3",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "graphql-ws": "^5.11.2",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.1",

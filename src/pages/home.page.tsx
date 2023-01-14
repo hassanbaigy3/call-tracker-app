@@ -7,6 +7,7 @@ import CallBar from "../components/call-bar.component";
 import { GET_CALLS } from "../utils/GQL";
 import type { CallType } from "../utils/types";
 import { CONSTANTS } from "../utils/CONSTANTS";
+import Footer from "../components/footer.component";
 
 const Home = () => {
   const [offset, setOffset] = useState(0);
@@ -26,10 +27,13 @@ const Home = () => {
       <Header />
 
       {loading ? (
-        <span className='flex justify-center items-center text-xl'>loading...</span>
+        <div className='flex justify-center items-center text-xl bg-secondary h-screen'>
+          <div className="lds-dual-ring"></div>
+        </div>
       ) : (
         <div className='flex flex-col justify-center overflow-x-auto relative mx-16 my-10'>
-          <h1 className='text-2xl mb-6'>Turing Technologies Frontend Test </h1>
+          <h1 className='text-2xl'>Call Details</h1>
+          <p className="mb-2">Paginated results displayed below are fetched from a public GraphQL API protected by a middleware that checks if the user is authenticated with a valid JWT</p>
           <table className='w-full text-sm text-gray-500 border-2 border-gray rounded-sm text-left'>
             <thead className='text-sm text-gray-700 uppercase bg-gray '>
               <th scope='col' className='py-3 px-6'>
@@ -90,6 +94,7 @@ const Home = () => {
           </div>
         </div>
       )}
+      <Footer/>
     </>
   );
 };
